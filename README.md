@@ -1,2 +1,2 @@
 # about-frontend
-Something about the 是、ummarize of learining 
+Something about the summarize of learining frontend
