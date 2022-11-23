@@ -1,0 +1,55 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-24 00:20:56
+ * @LastEditTime: 2020-11-24 23:42:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \exercise\reverse.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reverseNumber(string) {
+            var numberArr = String(string).split('').reverse()
+            var max = Math.pow(2, 31)
+            var min = Math.pow(-2, 31)
+            console.log(numberArr)
+            var transferArr = []
+            var numberBegin = false
+            for (var i = 0; i < numberArr.length; i++) {
+                var minus = null
+
+                var currentNumber = isNaN(Number(numberArr[i])) ? numberArr[i] : Number(numberArr[i]);
+                if (currentNumber === '-') {
+                    transferArr.unshift(currentNumber)
+                }
+                if (!isNaN(currentNumber) === true) {
+
+                    if (currentNumber > 0) {
+                        numberBegin = true
+                    }
+                    if ((!numberBegin && currentNumber !== 0) || numberBegin) {
+                        console.log(currentNumber)
+                        transferArr.push(currentNumber)
+                    }
+
+                }
+            }
+            console.log(transferArr)
+            return Number(transferArr.join('')) > min && Number(transferArr.join('')) < max ? Number(transferArr.join(
+                '')) : 0
+        }
+        var result = reverseNumber("1534236469")
+        console.log(result)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.tabItem
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.scrollView {
+    height: 500px;
+    overflow-y: scroll;
+    .scrollView-item {
+        height: 1000px;
+    }
+}

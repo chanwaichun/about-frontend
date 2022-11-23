@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script>
+      // 鼠标是否按下
+      let status = false;
+      let prevPosition = null;
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const setStrokeColor = setColor();
+      ctx.lineCap = "round";
+      ctx.lineWidth = 10;
+      ctx.lineJoin = "round";
+      console.log(ctx);
+      //   ctx.beginPath();
+      //   ctx.moveTo(25, 25);
+      //   ctx.lineTo(0, 100);
+      //   ctx.arc(75, 75, 50, 0, Math.PI * 2, true)
+      //   ctx.arc(75, 75, 50, 0, Math.PI * 2, true)
+      //   ctx.moveTo(75, 50);
+      //   ctx.lineTo(100, 75);
+      //   ctx.lineTo(100, 25);
+
+      ctx.stroke();
+      function setPrevPosition(x, y) {
+        prevPosition = { x, y };
+      }
+      function setColor() {
+        let r = 0;
+        let g = 0;
+        let b = 0;
+        let opacity = 1;
+        return function (...args) {
+          r++;
+          g++;
+          b++;
+          if (r >= 255) {
+            g++;
+            r = 0;
+          }
+          if (g >= 255) {
+            b++;
+            g = 0;
+          }
+          if (b >= 255) {
+            r = 0;
+          }
+          return `rgba(${r},${g},${b},${opacity})`;
+        };
+      }
+      window.addEventListener("mousedown", (e) => {
+        const { offsetX, offsetY } = e;
+        console.log(e);
+        setPrevPosition(offsetX, offsetY);
+        status = true;
+      });
+      window.addEventListener("mousemove", (e) => {
+        if (status) {
+          const { offsetX, offsetY } = e;
+          const { x, y } = prevPosition;
+          ctx.moveTo(x, y);
+          ctx.lineTo(offsetX, offsetY);
+          var gradient = ctx.createLinearGradient(20, 0, 220, 0);
+          gradient.addColorStop(0, "green");
+          gradient.addColorStop(1, "red");
+          ctx.strokeStyle = setStrokeColor();
+          ctx.stroke();
+          setPrevPosition(offsetX, offsetY);
+          // 取第一个点的x，y坐标
+        }
+      });
+      window.addEventListener("mouseup", (e) => {
+        console.log(e);
+        status = false;
+        prevPosition = null;
+      });
+    </script>
+  </body>
+</html>
