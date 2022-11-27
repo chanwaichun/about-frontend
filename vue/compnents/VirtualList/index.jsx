@@ -1,9 +1,9 @@
 /*
  * @Author: 陈伟俊 chenwj@crosstech.group
  * @Date: 2022-06-28 15:04:59
- * @LastEditors: 陈伟俊 chenwj@crosstech.group
- * @LastEditTime: 2022-06-28 16:06:02
- * @FilePath: \RuoYi-Vue3\src\components\VirtualList\index.jsx
+ * @LastEditors: chanwaichun chanwaichuncc@163.com
+ * @LastEditTime: 2022-11-24 09:59:54
+ * @FilePath: \about-frontend\vue\compnents\VirtualList\index.jsx
  * @Description: 
  * 
  * Copyright (c) 2022 by 陈伟俊 chenwj@crosstech.group, All Rights Reserved. 
@@ -27,7 +27,7 @@ const VirtualList = defineComponent({
         //     console.log(virtualList)
         // })
         function handleScroll(e) {
-
+            
             const hideNumber = Math.floor(e.target.scrollTop / height)
             currentData.value = data.slice(hideNumber, 20 + hideNumber)
             offsetY.value = hideNumber * height
