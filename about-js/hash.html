@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="body">
+      <nav id="nav">
+        <a href="/a">a</a>
+        <a href="/b">b</a>
+        <a href="/c">c</a>
+        <a href="/d">d</a>
+        <a href="/dd">e</a>
+      </nav>
+    </div>
+  </body>
+  <script>
+    // class VueRouter {
+    //   constructor(routes = []) {
+    //     this.routes = routes;
+    //     this.refresh = this.refresh.bind(this);
+    //     window.addEventListener("hashchange", this.refresh, false);
+    //   }
+    //   refresh(event) {
+    //     console.log(event);
+    //   }
+    // }
+    // const router = new VueRouter();
+  </script>
+  <script>
+    let _wr = function (type) {
+      let orig = history[type];
+      return function () {
+        let rv = orig.apply(this, arguments);
+        let e = new Event(type);
+        e.arguments = arguments;
+        window.dispatchEvent(e);
+        return rv;
+      };
+    };
+    history.pushState = _wr("pushState");
+    document.getElementById("nav").addEventListener("click", (e) => {
+      console.log(e);
+    });
+    window.addEventListener("pushState", (e) => {
+      console.log(e);
+    });
+    // function proxy(history, state, fn) {
+    //   const cb = history[state];
+    //   history[state] = function () {
+    //     cb.apply(history, arguments),
+    //       (function (history) {
+    //         return formate(history, "Function");
+    //       })(fn) && fn(Array.prototype.slice.call(arguments));
+    //   };
+    // }
+    // function formate(history, str) {
+    //   return `[object ${str}]` === {}.toString.call(history);
+    // }
+    // proxy(window.history, "pushState", (e) => {
+    //   console.log(e);
+    //   if (window.hasOwnProperty("controller")) {
+    //     window.controller.abort();
+    //     window.controller = null;
+    //     window.controller = new window.AbortController();
+    //   }
+    // });
+  </script>
+</html>

@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-31 17:33:21
- * @LastEditTime: 2021-07-31 18:03:51
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-23 11:55:35
+ * @LastEditors: chanwaichun chanwaichuncc@163.com
  * @Description: In User Settings Edit
- * @FilePath: \一些原理\算法\两数之和.js
+ * @FilePath: \about-frontend\algorithm\两数之和.js
  */
 function addTwoNumbers(l1, l2) {
   let target;
