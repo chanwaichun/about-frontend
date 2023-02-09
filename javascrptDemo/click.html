@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box1">
+      <div id="box2">content</div>
+    </div>
+    <script>
+      var x = 1;
+      const obj = {
+        x: 11,
+        func: function () {
+          x = 2;
+          console.log(this.x);
+          return this.x;
+        },
+      };
+      const func = obj.func;
+      console.log(func());
+      console.log(obj.func());
+      // const box1 = document.getElementById("box1");
+      // const box2 = document.getElementById("box2");
+      // box1.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("box1", "冒泡");
+      //   },
+      //   false,
+      // );
+      // box2.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("box2", "捕获");
+      //   },
+      //   true
+      // );
+      // box1.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("box1", "冒泡");
+      //   },
+      //   false
+      // );
+      // box2.addEventListener(
+      //   "click",
+      //   () => {
+      //     console.log("box2", "冒泡");
+      //   },
+      //   false
+      // );
+    </script>
+  </body>
+</html>
