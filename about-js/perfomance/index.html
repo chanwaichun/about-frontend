@@ -1,0 +1,34 @@
+<!--
+ * @Author: chanwaichun
+ * @Date: 2023-01-04 17:26:07
+ * @LastEditors: chanwaichun chanwaichuncc@163.com
+ * @LastEditTime: 2023-01-04 17:43:21
+ * @FilePath: \about-frontend\about-js\perfomance\index.html
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by chanwaichun chanwaichuncc@163.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">add</button>
+    <script>
+      var a;
+      function fn() {
+        var ul = document.createElement("ul");
+        for (var i = 0; i < 10; i++) {
+          var li = document.createElement("li");
+          ul.appendChild(li);
+        }
+        a = ul;
+      }
+      document.getElementById("btn").addEventListener("click", fn);
+    </script>
+  </body>
+</html>
