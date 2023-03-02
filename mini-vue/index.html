@@ -1,17 +1,35 @@
+<!--
+ * @Author: chanwaichun
+ * @Date: 2022-11-13 18:18:50
+ * @LastEditors: chanwaichun chanwaichuncc@163.com
+ * @LastEditTime: 2023-01-09 15:52:42
+ * @FilePath: \about-frontend\mini-vue\index.html
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by chanwaichun chanwaichuncc@163.com, All Rights Reserved. 
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div id="app"></div>
-  <script src="./core/vue.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
-  <script>
-    new Vue()
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./core/observer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./core/vue.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script> -->
+    <script>
+      const option = {
+        el:'#app', 
+        data: {
+          a: 1,
+          b: 2,
+        },
+      };
+      let vm = new Vue(option);
+    </script>
+  </body>
 </html>

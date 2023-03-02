@@ -1,9 +1,9 @@
 /*
  * @Author: 陈伟俊 chenwj@crosstech.group
  * @Date: 2022-07-05 15:45:41
- * @LastEditors: 陈伟俊 chenwj@crosstech.group
- * @LastEditTime: 2022-07-06 11:51:32
- * @FilePath: \RuoYi-Vue3\src\components\Anchor\index.jsx
+ * @LastEditors: chanwaichun chanwaichuncc@163.com
+ * @LastEditTime: 2023-02-13 11:22:41
+ * @FilePath: \about-frontend\vue\compnents\Anchor\index.jsx
  * @Description: 
  * 
  * Copyright (c) 2022 by 陈伟俊 chenwj@crosstech.group, All Rights Reserved. 
@@ -15,6 +15,7 @@ import './index.scss'
  * @param {HTMLElement} currentRefItem
  * @return {void}
  */
+
 function scrollToArea(currentRefItem) {
     const offsetTop = currentRefItem.offsetTop;
     // 父元素滚动到相对应的位置
@@ -63,6 +64,7 @@ function listenerScroll( currentRefList, callback, isRemove = false) {
         invokeFunction = null
     }
 }
+
 const Anchor = defineComponent({
     expose: ['setRefItem'],
     setup(_, { expose, slots }) {
